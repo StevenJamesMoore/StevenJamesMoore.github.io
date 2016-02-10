@@ -9,7 +9,7 @@
 	<script src="mturk.js"></script>
 </head>
 <body>
-	<form action="http://www.SomeFakeURLHerePlaceHolder.com" method="POST">
+	<form id="mturk_form" name="mturk_form" method="POST">
         <center>
         <div>
 			<div id="instructions" class="instructions">
@@ -58,7 +58,7 @@
 				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
 				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_1_input" class="input" min="0" />		
+				<input type="number" id="img_1_input" class="input" min="0" name="goldenrule" />		
 				<input type="button" id="goldenrule" class="next" value="Next ->" />
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
 				<br />
@@ -70,7 +70,7 @@
 				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
 				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_2_input" class="input" min="0" />		
+				<input type="number" id="img_2_input" class="input" min="0" name="image_one" />		
 				<input type="button" class="next" value="Next ->" />
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
                 <br />
@@ -82,7 +82,7 @@
 				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
               	<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_3_input" class="input" min="0" />		
+				<input type="number" id="img_3_input" class="input" min="0" name="image_two" />		
 				<input type="button" class="next" value="Next ->" />
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
                 <br />
@@ -94,7 +94,7 @@
 				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
 				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_4_input" class="input" min="0" />		
+				<input type="number" id="img_4_input" class="input" min="0" name="image_three" />		
 				<input type="button" class="next" value="Next ->" />
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
                 <br />
@@ -106,7 +106,7 @@
 				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
                 <input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_5_input" class="input" min="0" />		
+				<input type="number" id="img_5_input" class="input" min="0" name="image_four" />		
 				<input type="button" class="next" value="Next ->" />
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
                 <br />
@@ -118,7 +118,7 @@
 				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
 				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_6_input" class="input" min="0" />		
+				<input type="number" id="img_6_input" class="input" min="0" name="image_five" />		
 				<input type="button" class="next" value="Next ->" />
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
 				<br />	
@@ -130,7 +130,7 @@
 				Please input the number of people identifiable in the above image.<br />   Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
 				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_7_input" class="input" min="0" />		
+				<input type="number" id="img_7_input" class="input" min="0" name="image_six" />		
 				<input type="button" class="next" value="Next ->" />
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
 				<br />	
@@ -142,8 +142,8 @@
 				Please input the number of people identifiable in the above image.<br />   Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
 				<br />
 				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
-				<input type="number" id="img_8_input" class="input" min="0" />		
-				<input type="button" class="next" value="Next ->" />
+				<input type="number" id="img_8_input" class="input" min="0" name="image_seven" />		
+				<input type="submit" value="Submit">
 				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
 				<br />	
 			</div>
