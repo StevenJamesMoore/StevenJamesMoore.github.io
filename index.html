@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Prototype</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+	<form action="http://www.SomeFakeURLHerePlaceHolder.com" method="POST">
+        <center>
+        <div>
+			<div id="instructions" class="instructions">
+				<b>Purpose:</b><br />
+				This task can help inform my research into assitive systems for the blind.
+				<br /><br />
+				<b>Instructions:</b><br />
+				Please correctly identify how many people are in each of the following photos and input that number into the textbox that will appear below the image.  
+				<br /><br />
+				For identificaiton purposes, only count the individual if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br /><br />
+				Even if the quality of the picture is low, keep an eye out for the identification criteria mentioned above.
+				<br /><br />
+				<b>Tools (Optional):</b><br />
+				During this task, you can click on the image to add a point, which may be useful for counting many individuals in an image.
+				<br /><br />
+				There's a button at the bottom right of the screen that will count up the points for you and input that number into the input box.
+				<br /><br />
+				Additionally, there's an undo button on the bottom left that will remove the last point for you.
+				<br /><br />
+				Note: You don't have to use this "add a point to the picture" capability, it's just provided to assist in keeping track of larger quantities.
+				<br /><br />
+				<b>Bonus:</b><br />
+				A bonus will be provided to those whose answers are close to the average.
+				<br /><br />
+				<input type="button" id="instructionsNextButton" value="Next ->" />
+			</div>
+			<div id="examplea" style="display: none;font: 24px arial;">
+				<img src="img_a.jpg" id="imga" />
+				<br />
+				Example of an image with 11 people
+				<br />
+				<input type="button" id="imganext" value="Next ->" />
+			</div>
+			<div id="img_0_container" style="display: none;font: 24px arial;">
+				<img src="img_b.jpg" id="imgb" />
+				<br />
+				Example of an image with 1 person
+				<br />
+				<input type="button" class="next" value="Next ->" />
+			</div>
+			
+			<div id="img_1_container" class="container">
+				<canvas id="img_1_canvas" class="canvas" style="background-image:url('img_1.jpg');"></canvas>
+				<br />
+				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_1_input" class="input" min="0" />		
+				<input type="button" id="goldenrule" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+				<br />
+			</div>
+			
+            <div id="img_2_container" class="container">
+                <canvas id="img_2_canvas" class="canvas"  style="background-image:url('img_2.jpg');" /></canvas>
+                <br />
+				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_2_input" class="input" min="0" />		
+				<input type="button" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+                <br />
+            </div>
+			
+            <div id="img_3_container" class="container">
+                <canvas id="img_3_canvas" class="canvas"  style="background-image:url('img_3.jpg');" /></canvas>
+                <br />
+				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+              	<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_3_input" class="input" min="0" />		
+				<input type="button" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+                <br />
+            </div>
+			
+            <div id="img_4_container" class="container">
+                <canvas id="img_4_canvas" class="canvas"  style="background-image:url('img_4.jpg');" /></canvas>
+                <br />
+				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_4_input" class="input" min="0" />		
+				<input type="button" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+                <br />
+            </div>
+			
+            <div id="img_5_container" class="container">
+                <canvas id="img_5_canvas" class="canvas"  style="background-image:url('img_5.jpg');" /></canvas>
+                <br />
+				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+                <input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_5_input" class="input" min="0" />		
+				<input type="button" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+                <br />
+            </div>
+				
+			<div id="img_6_container" class="container">
+				<canvas id="img_6_canvas" class="canvas"  style="background-image:url('img_6.png');" /></canvas>
+				<br />
+				Please input the number of people identifiable in the above image.<br />  Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_6_input" class="input" min="0" />		
+				<input type="button" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+				<br />	
+			</div>
+				
+			<div id="img_7_container" class="container">
+				<canvas id="img_7_canvas" class="canvas"  style="background-image:url('img_7.jpg');" /></canvas>
+				<br />
+				Please input the number of people identifiable in the above image.<br />   Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_7_input" class="input" min="0" />		
+				<input type="button" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+				<br />	
+			</div>
+			
+			<div id="img_8_container" class="container">
+				<canvas id="img_8_canvas" class="canvas"  style="background-image:url('img_8.jpg');" /></canvas>
+				<br />
+				Please input the number of people identifiable in the above image.<br />   Identifiable meaning if a majority of their body can be seen or an identifiable part of their face is visible (mouth, nose, eye(s), ear(s)).
+				<br />
+				<input type="button" class="undo" style="display: none; float: left;" value="Undo/Remove Dots" />
+				<input type="number" id="img_8_input" class="input" min="0" />		
+				<input type="button" class="next" value="Next ->" />
+				<input type="button" class="count" style="display: none; float: right;" value="Click To Use Dot Count" />
+				<br />	
+			</div>
+		</div>
+		
+		<br />
+
+		
+		</center>
+	</form>
+</body>
+</html>
+
+<script type="text/javascript" language="JavaScript">	
+	//Canvas color stuff
+	var canvas;
+	var ctx;
+	var points = [];
+	var image = 0;
+
+    $(function () {
+		$('#instructionsNextButton').button();
+		$('#imganext').button();
+		$('#imgbnext').button();
+        $('.next').button();
+		$('.undo').button();
+		$('.count').button();
+		
+        $('.next').on('click', function () {
+			if((image) == 0)
+				$('#next0').hide();
+			
+			if(this.id == "goldenrule") {
+				if(this.value != 7) {
+					alert("The correct answer was 7, please pay closer attention!")
+				}
+			}
+			
+            if((image) == 0 || $('#img_' + (image) + '_input').val()) {
+				//show the input buttons
+				$('.undo').show();
+				$('.count').show();
+			
+				$('#img_' + (image) + '_container').hide();
+				$('#img_' + (image + 1) + '_container').show();
+				
+				//Sizing of the image
+				$('#img_' + (image + 1) + '_canvas').height(screen.height * .8);
+				$('#img_' + (image + 1) + '_canvas').width(screen.width * .8);
+				document.getElementById('img_' + (image + 1) + '_canvas').style.backgroundSize = "100% 100%";
+				
+				//Remove and add event handling
+				$('#img_' + (image) + '_canvas').unbind( "mousedown" );
+				$('#img_' + (image + 1) + '_canvas').mousedown(function(e){handleMouseDown(e);});
+				
+				//Canvas variables and sizing
+				canvas = document.getElementById('img_' + (image + 1) + '_canvas');
+				ctx = canvas.getContext('2d');
+				ctx.canvas.width = screen.width * .8;
+				ctx.canvas.height = screen.height * .8;
+				ctx.fillStyle = 'yellow';
+				points=[];
+				
+				//Increment image count
+				image++;
+			}
+			else {
+				alert('Please input a numerical value into the textbox!')
+			}
+        });
+	
+	});
+	
+    function handleMouseDown(e){
+	  ctx.fillRect(e.offsetX - 4, e.offsetY - 4,8,8);
+	  points.push({x: e.offsetX - 4, y: e.offsetY - 4});
+    }
+
+    function redrawAll(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+		if(points.length==0){return;}
+		
+        for(var i=0;i<points.length;i++){
+          var pt=points[i];
+		  ctx.fillRect(pt.x, pt.y, 7, 7);
+        }
+    }
+
+    function undoLast(){
+        points.pop();
+        redrawAll();
+    }
+
+	
+    $(".undo").mousedown(function() {
+      undoLast();
+    });
+	
+	$('.count').on('click', function() {
+		if(points) {
+			$('#img_' + (image) + '_input').val(points.length);
+		}
+	});
+	
+	$('#instructionsNextButton').on('click', function () {
+		$('#instructions').hide();
+		$('#examplea').show();
+		$('#imga').height(screen.height * .8);
+		$('#imga').width(screen.width * .8);
+	});
+		
+	$('#imganext').on('click', function () {
+		$('#examplea').hide();
+		$('#img_0_container').show();
+		$('#imgb').height(screen.height * .8);
+		$('#imgb').width(screen.width * .8);
+	});
+</script>
+
+<style>
+    .instructions {
+        font: 24px arial;
+        width: 50%;
+    }
+
+    .input {
+        font-size: 24px;
+        height: 50px;
+        width: 100px;
+    }
+
+    .container {
+        display: none;
+		font: 24px arial;
+    }
+</style>
