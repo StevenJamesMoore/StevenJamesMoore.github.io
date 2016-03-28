@@ -45,6 +45,7 @@
 	var startTime;
 	var leftClicks = 0;
 	var rightClicks = 0;
+	var seconds = 0;
 	
 	//See if the Turker opened their developer tools
 	var checkStatus;
@@ -143,6 +144,7 @@
 	}
 	
 	function addRow() {
+		seconds++;
 		for(var j = 0; j <= columns; j++)
 				$('#gridcell_' + rows + '_' + j).remove();
 				
